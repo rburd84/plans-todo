@@ -1,0 +1,28 @@
+@use "./navbar";
+@use "./sideBox";
+@use "./projectBox";
+// body {
+//   background: red;
+// }
+
+.main-container {
+  padding: 20px;
+}
+
+.sidebar,
+.display {
+  border: 1px solid black;
+  min-height: 85vh;
+}
+
+.sidebar {
+  background: lightgray;
+}
+
+.project-data {
+  height: fit-content;
+}
+
+.hide {
+  display: none;
+}

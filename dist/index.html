@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./main.js" defer></script>
+    <title>Todo Planner</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-container">
+        <div class="row">
+          <nav class="navbar navbar-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img
+                  src="/docs/5.1/assets/brand/bootstrap-logo.svg"
+                  alt=""
+                  width="30"
+                  height="24"
+                  class="d-inline-block align-text-top"
+                />
+                ToDo
+              </a>
+              <form class="d-flex">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                  Search
+                </button>
+              </form>
+
+              <ul class="navbar-nav" id="nav-list">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      fill="currentColor"
+                      class="bi bi-plus"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      fill="currentColor"
+                      class="bi bi-bell"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      fill="currentColor"
+                      class="bi bi-gear-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="row">
+          <div class="container sidebar col-4">
+            <div class="container date-data">
+              <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                  <div class="date-data-item">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      fill="currentColor"
+                      class="bi bi-inbox"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4H4.98zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438L14.933 9zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374l3.7-4.625z"
+                      />
+                    </svg>
+                    <p class="date-data-title">Inbox</p>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div class="date-data-item">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      fill="currentColor"
+                      class="bi bi-calendar-day"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M4.684 11.523v-2.3h2.261v-.61H4.684V6.801h2.464v-.61H4v5.332h.684zm3.296 0h.676V8.98c0-.554.227-1.007.953-1.007.125 0 .258.004.329.015v-.613a1.806 1.806 0 0 0-.254-.02c-.582 0-.891.32-1.012.567h-.02v-.504H7.98v4.105zm2.805-5.093c0 .238.192.425.43.425a.428.428 0 1 0 0-.855.426.426 0 0 0-.43.43zm.094 5.093h.672V7.418h-.672v4.105z"
+                      />
+                      <path
+                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
+                      />
+                    </svg>
+                    <p class="date-data-title">Today</p>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div class="date-data-item">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      fill="currentColor"
+                      class="bi bi-calendar3"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"
+                      />
+                      <path
+                        d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+                      />
+                    </svg>
+                    <p class="date-data-title">Upcoming</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="project-data flex-shrink-0 p-2">
+              <ul class="list-unstyled ps-0 mb-0">
+                <li class="mb-1 position-relative">
+                  <button
+                    class="btn btn-toggle align-items-center rounded collapsed"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#project-collapse"
+                    aria-expanded="true"
+                  >
+                    Projects
+                  </button>
+                  <a href="#" class=""
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      fill="currentColor"
+                      class="
+                        bi bi-plus
+                        position-absolute
+                        top-50
+                        end-0
+                        translate-middle-y
+                      "
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                      />
+                    </svg>
+                  </a>
+                  <div class="collapse" id="project-collapse">
+                    <ul
+                      class="btn-toggle-nav list-unstyled fw-normal pb-1 small"
+                    >
+                      <li>
+                        <a href="#" class="link-dark rounded">Overview</a>
+                      </li>
+                      <li><a href="#" class="link-dark rounded">Updates</a></li>
+                      <li><a href="#" class="link-dark rounded">Reports</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <hr style="margin: 0" />
+          </div>
+          <div class="container display col-8"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
