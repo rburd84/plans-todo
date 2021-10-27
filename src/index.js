@@ -14,23 +14,8 @@ const modal = document.querySelector(".modal");
 const addTaskForm = document.getElementById("add-task-form");
 const inboxAddTaskBtn = document.getElementById("inbox-add-task");
 const inputBtnAddTask = document.getElementById("input-btn-add-task");
-const formText = document.getElementById("input-text");
-const addDataLine = document.getElementById("add-data-line");
-console.log(addDataLine);
+// console.log(addDataLine);
 // console.log({ sidebar, display });
-
-// Form Line input edit event listener
-formEditList.addEventListener("click", function (e) {
-  if (e.target.classList.contains("bi-pencil")) {
-    console.log("Pencil licked");
-  } else if (e.target.classList.contains("bi-calendar3-event")) {
-    console.log("Calendar clicked");
-  } else if (e.target.classList.contains("bi-chat-square")) {
-    console.log("Chat square clicked");
-  } else if (e.target.classList.contains("bi-three-dots")) {
-    console.log("Three dots clicked");
-  }
-});
 
 // Add Data to DOM function
 
@@ -140,7 +125,7 @@ inputBtnAddTask.addEventListener("click", addData);
 inboxAddTaskBtn.addEventListener("click", function (e) {
   addTaskForm.classList.toggle("hide");
   e.target.classList.toggle("hide");
-  console.log(e.target);
+  // console.log(e.target);
 });
 
 // Add new task event listeners
