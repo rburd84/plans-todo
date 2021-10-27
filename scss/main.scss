@@ -1,9 +1,13 @@
 @use "./navbar";
 @use "./sideBox";
 @use "./projectBox";
-// body {
-//   background: red;
-// }
+@use "./inbox";
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
+
+:root {
+  font-family: "Fira Sans";
+}
 
 .main-container {
   padding: 20px;
