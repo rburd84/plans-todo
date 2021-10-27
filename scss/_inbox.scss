@@ -19,3 +19,22 @@
     text-decoration: none;
   }
 }
+
+#form-edit-list {
+  display: flex;
+  flex-direction: row;
+
+  li + li {
+    margin-left: 15px;
+  }
+}
+
+#line-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav-link {
+    color: #333;
+  }
+}
