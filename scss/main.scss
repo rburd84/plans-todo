@@ -30,3 +30,13 @@
 .hide {
   display: none;
 }
+
+.select-project-container {
+  display: flex;
+  justify-content: flex-end;
+  visibility: collapse;
+
+  #select-project {
+    width: 250px;
+  }
+}

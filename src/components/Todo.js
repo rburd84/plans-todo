@@ -1,10 +1,30 @@
 export default class Todo {
-  constructor(title, description, dueDate, priority, notes, checklist) {
+  description = undefined;
+  dueDate = null;
+  priority = ["low", "normal", "urgent", "emergency"];
+  notes = undefined;
+  checklist = [];
+  constructor(title) {
     this.title = title;
-    this.description = description;
-    this.dueDate = dueDate;
-    this.priority = priority;
-    this.notes = notes;
-    this.checklist = checklist;
+  }
+
+  // get notes() {
+  //   return this.notes;
+  // }
+
+  setDescription(value) {
+    this.description = value;
+  }
+
+  setDueDate(value) {
+    this.dueDate = new Date(value).toUTCString();
+  }
+
+  setNotes(value) {
+    this.notes = value;
+  }
+
+  addToCheckList(val) {
+    this.checklist.push(val);
   }
 }
