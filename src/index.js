@@ -109,6 +109,7 @@ class App {
     //   item.addTodoToProjectList(listName.prj[listName.name]);
     // });
 
+    // Form Event listener to make TODO
     addTaskForm.addEventListener("submit", (e) => {
       const newTodo = new Todo();
 
@@ -134,16 +135,23 @@ class App {
       e.preventDefault();
     });
 
+    // Loops through projects and prints project list to DOM
     document.addEventListener("DOMContentLoaded", () => {
       const prjDisplay = document.getElementById("project-display-list");
-      for (const prj of projectList.projects) {
-        console.log(Object.keys(prj));
-      }
-      console.log(projectList);
-      console.log("Live");
-    });
 
-    // addTaskForm.addEventListener("click", addData);
+      for (let i = 0; i < projectList.projects.length; i++) {
+        const li = document.createElement("li");
+        let key = Object.keys(projectList.projects[i]).toString();
+        li.id = `${key}-project`;
+        li.innerHTML = `<a href="#" class="link-dark rounded">${key}</a>`;
+        prjDisplay.appendChild(li);
+
+        // Event Listener for each individual project
+        document.getElementById(li.id).addEventListener("click", () => {
+          console.log(`${li.id} clicked`);
+        });
+      }
+    });
   }
 }
 
