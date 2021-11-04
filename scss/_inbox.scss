@@ -1,3 +1,12 @@
+.inbox-display {
+  display: flex;
+  flex-direction: column;
+
+  .hide {
+    display: none;
+  }
+}
+
 #inbox-add-task {
   text-decoration: none;
   color: red;

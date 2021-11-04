@@ -1,4 +1,5 @@
 import Todo from "./Todo";
+import { selectPrjContainer } from "..";
 
 // Add Data to DOM function
 // export default function addData() {
@@ -34,11 +35,7 @@ export function checkInput(e) {
 export function inputControlsEvent(e) {
   // Makes project selection box reappear on click
   if (e.target.classList.contains("add-project-prj")) {
-    const selectPrjContainer = document.querySelector(
-      ".select-project-container"
-    );
-    const selectPrj = document.getElementById("select-project");
-    selectPrjContainer.style.visibility = "visible";
+    selectPrjContainer.classList.toggle("visible");
   }
 
   e.preventDefault();

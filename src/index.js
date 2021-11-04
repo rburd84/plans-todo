@@ -18,10 +18,10 @@ const inboxAddTaskBtn = document.getElementById("inbox-add-task");
 const inputBtnAddTask = document.getElementById("input-btn-add-task");
 const inputControlsList = document.getElementById("input-controls-list");
 const addProjectList = document.getElementById("add-project-list");
-let listing;
-
-// console.log(addDataLine);
-// console.log({ sidebar, display });
+const selectVal = document.querySelector("#select-project");
+export const selectPrjContainer = document.querySelector(
+  ".select-project-container"
+);
 
 // Input Form Add Task button Event Listener
 // inputBtnAddTask.addEventListener("click", function () {
@@ -32,21 +32,13 @@ let listing;
 // Input Add Task Button Event Listener
 // Opens form to enter input to make todo
 inboxAddTaskBtn.addEventListener("click", function (e) {
-  const selectPrjContainer = document.querySelector(
-    ".select-project-container"
-  );
-  selectPrjContainer.style.visibility = "visible";
-  document.querySelector("#select-project").addEventListener("change", (e) => {
-    listing = e.target.value;
-    selectPrjContainer.style.visibility = "collapse";
-
-    // Returns a string of list name
-    console.log(listing);
-  });
   // adds event listener to buttons to choose project, make dates, and choose priority
   inputControlsList.addEventListener("click", inputControlsEvent);
   addTaskForm.classList.toggle("hide");
   e.target.classList.toggle("hide");
+  selectPrjContainer.classList.toggle("visible");
+
+  selectVal.selectedIndex = 0;
   // console.log(e.target);
 });
 
@@ -67,19 +59,10 @@ btnToggler.addEventListener("click", function (e) {
 biPlus.addEventListener("click", function () {
   console.log("Add a new project");
 });
-// console.log(projCollapse);
-
-// Manually make todo item
-// const todo1 = new Todo("Call realtor");
-// todo1.setDueDate("10/28/2021");
-// todo1.notes = "I have updated my notes";
-
-// Manually make todo item
-// const todo2 = new Todo("Call bank");
-// todo2.dueDate = new Date("10/05/2017").toUTCString();
 
 class App {
   static init() {
+    let listing;
     // Make a Project list to hold all projects
     const projectList = new ProjectList();
 
@@ -89,49 +72,49 @@ class App {
     projectList.addNewProjectList("testing2");
 
     // Get a project list from project lists array
-    projectList.getProjectFromList("List30");
+    const list30 = projectList.getProjectFromList("List30");
+    const testing1 = projectList.getProjectFromList("testing1");
+    const testing2 = projectList.getProjectFromList("testing2");
+    console.log({ list30, testing1, testing2 });
 
-    // Render todo to DOM
-    // item.render();
-    // item2.render();
+    // Select Element Event Listener
+    // Gets and returns which select element was chosen
+    // Returns select element to original state
+    document
+      .querySelector("#select-project")
+      .addEventListener("change", (e) => {
+        listing = e.target.value;
+        selectPrjContainer.style.visibility = "collapse";
 
-    // inputBtnAddTask.addEventListener("click", item.render.bind(item2));
-
-    // addTaskForm.addEventListener("click", (e) => {
-    //   /*   Function needs to
-    //     1. Make a todo
-    //     2. Get input place into Todo title
-    //     3. Get project list todo will belong to
-    //     4. Add todo to proper list      */
-
-    //   // It works where it accepts input finds list and places todo into the correct project
-    //   // still must tweak
-    //   item.addTodoToProjectList(listName.prj[listName.name]);
-    // });
+        // Returns a string of list name
+        return listing;
+      });
 
     // Form Event listener to make TODO
     addTaskForm.addEventListener("submit", (e) => {
       const newTodo = new Todo();
 
       const formText = document.getElementById("input-text");
-      const selectVal = document.querySelector("#select-project");
+      // const selectVal = document.querySelector("#select-project");
 
       newTodo.title = formText.value;
 
       let item = new ProjectItem(newTodo);
 
       // Make an item to push into project list
-      // element.addTodoToProjectList(#list[#list name]);
-      item.addTodoToProjectList(
-        projectList.getProjectFromList(listing).prj[listing]
-      );
+      item.addTodoToProjectList(projectList.getProjectFromList(listing));
+      // console.log(projectList);
       // console.log(formText, listing);
-      // console.log(newTodo);
-      // console.log("Add form trying to submit");
-      item.render();
-      console.log(projectList);
-      selectVal.selectedIndex = 0;
+      // console.log(projectList.getProjectFromList(listing));
+
+      item.render("add-data-line");
+      // console.log(projectList.getProjectFromList(Object.keys(listing)));
+      // console.log(item.addTodoToProjectList(listing));
+      // selectVal.selectedIndex = 0;
       formText.value = "";
+      // selectPrjContainer.classList.toggle("visible");
+      selectVal.selectedIndex = 0;
+
       e.preventDefault();
     });
 

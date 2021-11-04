@@ -16,9 +16,10 @@ export class ProjectList {
 
   // Get a single project from list
   getProjectFromList(name) {
-    let prj = this.projects.find((proj) => name in proj);
-    // console.log(name);
-    return { prj, name };
+    let prj = this.projects.find(
+      (proj) => Object.keys(proj).toString() === name
+    );
+    return prj;
   }
 
   // Display a list of all projects in projects array
@@ -36,14 +37,17 @@ export class ProjectItem {
 
   // Add new todo to project list
   addTodoToProjectList(list) {
-    list.push(this.todo);
+    list[Object.keys(list).toString()].push(this.todo);
+    console.log(this.todo);
+    console.log(list);
+    // console.log(list[Object.keys(list).toString()]);
   }
 
   // Render a todo project item
-  render() {
+  render(id) {
     console.log(this, "hello");
     // Table body
-    const addDataLine = document.getElementById("add-data-line");
+    const addDataLine = document.getElementById(id);
 
     const row = document.createElement("tr");
     row.innerHTML = `
@@ -141,7 +145,6 @@ export class ProjectItem {
     addDataLine.appendChild(row);
 
     const formEditList = document.getElementById("form-edit-list");
-    console.log(formEditList);
 
     // Form Line input edit event listener
     formEditList.addEventListener("click", checkInput);
